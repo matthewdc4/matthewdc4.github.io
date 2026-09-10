@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鹰手营子租房-本地房源信息与租房实用指南</title>
+<meta name="description" content="鹰手营子租房信息参考平台，整理矿区及周边街道的整租、合租、单间与商铺房源类型，介绍租金影响因素、看房要点、签约流程和常见问题，帮助在鹰手营子矿区找房的人快速了解行情并做出稳妥选择。">
+<meta name="keywords" content="鹰手营子租房,鹰手营子矿区租房,鹰手营子出租房,营子区租房信息,鹰手营子合租">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --main:#1f6f5c;
+  --main-dark:#155043;
+  --main-light:#e8f3ef;
+  --accent:#e08a2e;
+  --ink:#22312d;
+  --ink-soft:#5c6f69;
+  --line:#dbe6e1;
+  --bg:#f5f8f6;
+  --white:#ffffff;
+}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* 顶部信息条 */
+.topbar{
+  background:var(--main-dark);
+  color:#cfe3dc;
+  font-size:13px;
+  padding:7px 0;
+}
+.topbar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+.topbar span{opacity:.92}
+
+/* 页眉 */
+header.site-header{
+  background:var(--white);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:0 2px 10px rgba(31,111,92,.05);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{
+  width:44px;height:44px;
+  border-radius:12px;
+  background:linear-gradient(140deg,var(--main),#3f9a83);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:20px;
+  letter-spacing:1px;
+  flex-shrink:0;
+}
+.brand-text b{display:block;font-size:19px;color:var(--main-dark);letter-spacing:.5px}
+.brand-text small{display:block;font-size:12px;color:var(--ink-soft);letter-spacing:2px}
+
+nav.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+}
+nav.main-nav a{
+  display:block;
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:15px;
+  color:var(--ink-soft);
+  transition:.2s;
+}
+nav.main-nav a:hover,nav.main-nav a.active{
+  background:var(--main-light);
+  color:var(--main-dark);
+  font-weight:600;
+}
+
+/* 首屏 */
+.hero{
+  background:
+    radial-gradient(circle at 88% 12%,rgba(224,138,46,.16),transparent 46%),
+    linear-gradient(160deg,#1f6f5c 0%,#2b8a72 52%,#3f9a83 100%);
+  color:#fff;
+  padding:56px 0 62px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-120px;bottom:-140px;
+  width:360px;height:360px;
+  border-radius:50%;
+  background:rgba(255,255,255,.06);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:44px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+.hero h1{
+  font-size:36px;
+  line-height:1.3;
+  letter-spacing:.5px;
+  margin-bottom:16px;
+}
+.hero h1 em{
+  font-style:normal;
+  color:#ffd9a8;
+}
+.hero p.lead{
+  font-size:16px;
+  color:#dceee9;
+  margin-bottom:24px;
+  max-width:560px;
+}
+.hero-tags{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.hero-tags span{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);
+  padding:5px 13px;
+  border-radius:20px;
+  font-size:13.5px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;
+  padding:11px 24px;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:600;
+  transition:.2s;
+  cursor:pointer;
+  border:none;
+}
+.btn-solid{background:#ffd9a8;color:#5a3a10}
+.btn-solid:hover{background:#ffe6c4}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* 首屏右侧速览卡 */
+.quick-card{
+  background:rgba(255,255,255,.96);
+  border-radius:16px;
+  padding:24px 24px 20px;
+  color:var(--ink);
+  box-shadow:0 18px 40px rgba(9,44,35,.28);
+}
+.quick-card h2{
+  font-size:17px;
+  color:var(--main-dark);
+  margin-bottom:14px;
+  padding-bottom:10px;
+  border-bottom:1px dashed var(--line);
+}
+.quick-list{list-style:none}
+.quick-list li{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:9px 0;
+  font-size:14.5px;
+  border-bottom:1px solid #f0f5f2;
+}
+.quick-list li:last-child{border-bottom:none}
+.quick-list b{color:var(--main-dark);font-weight:600}
+.quick-list span{color:var(--ink-soft);text-align:right}
+.quick-note{
+  margin-top:12px;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  background:var(--main-light);
+  border-radius:8px;
+  padding:9px 12px;
+  line-height:1.6;
+}
+
+/* 通用区块 */
+section.block{padding:56px 0}
+.section-head{margin-bottom:30px}
+.section-head .eyebrow{
+  display:inline-block;
+  font-size:13px;
+  letter-spacing:2px;
+  color:var(--accent);
+  font-weight:700;
+  margin-bottom:8px;
+}
+.section-head h2{
+  font-size:26px;
+  color:var(--main-dark);
+  letter-spacing:.5px;
+}
+.section-head p{
+  margin-top:10px;
+  color:var(--ink-soft);
+  max-width:760px;
+  font-size:15px;
+}
+
+/* 房源类型卡片 */
+.type-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.type-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 20px;
+  transition:.22s;
+  display:flex;
+  flex-direction:column;
+}
+.type-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 28px rgba(31,111,92,.12);
+  border-color:#bcd9cf;
+}
+.type-icon{
+  width:42px;height:42px;
+  border-radius:10px;
+  background:var(--main-light);
+  color:var(--main-dark);
+  display:flex;align-items:center;justify-content:center;
+  font-size:19px;font-weight:700;
+  margin-bottom:14px;
+}
+.type-card h3{font-size:17px;color:var(--main-dark);margin-bottom:8px}
+.type-card p{font-size:14px;color:var(--ink-soft);flex:1}
+.type-card .fit{
+  margin-top:14px;
+  font-size:13px;
+  color:var(--accent);
+  border-top:1px dashed var(--line);
+  padding-top:10px;
+}
+
+/* 区域与行情 */
+.area-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+.area-panel{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:26px 26px 20px;
+}
+.area-panel h3{
+  font-size:18px;
+  color:var(--main-dark);
+  margin-bottom:6px;
+}
+.area-panel .sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px}
+.area-list{list-style:none}
+.area-list li{
+  padding:13px 0;
+  border-bottom:1px solid #f0f5f2;
+}
+.area-list li:last-child{border-bottom:none}
+.area-list b{display:block;font-size:15px;color:var(--ink);margin-bottom:3px}
+.area-list span{font-size:13.5px;color:var(--ink-soft)}
+.area-list li::before{
+  content:"";
+  display:none;
+}
+
+.factor-list{list-style:none;counter-reset:f}
+.factor-list li{
+  position:relative;
+  padding:0 0 16px 40px;
+  font-size:14.5px;
+  color:var(--ink-soft);
+}
+.factor-list li b{color:var(--ink)}
+.factor-list li::before{
+  counter-increment:f;
+  content:counter(f);
+  position:absolute;
+  left:0;top:0;
+  width:26px;height:26px;
+  border-radius:50%;
+  background:var(--main-light);
+  color:var(--main-dark);
+  font-size:13px;
+  font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* 看房流程 */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:16px;
+  counter-reset:s;
+}
+.step{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px 18px;
+  position:relative;
+}
+.step::before{
+  counter-increment:s;
+  content:counter(s,decimal-leading-zero);
+  font-size:13px;
+  font-weight:700;
+  color:var(--accent);
+  letter-spacing:1px;
+  display:block;
+  margin-bottom:8px;
+}
+.step h3{font-size:15.5px;color:var(--main-dark);margin-bottom:7px}
+.step p{font-size:13.5px;color:var(--ink-soft)}
+
+/* 注意事项 */
+.notice-band{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-left:5px solid var(--accent);
+  border-radius:12px;
+  padding:24px 26px;
+}
+.notice-band h3{font-size:18px;color:var(--main-dark);margin-bottom:12px}
+.notice-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.notice-item b{display:block;font-size:14.5px;color:var(--ink);margin-bottom:5px}
+.notice-item p{font-size:13.5px;color:var(--ink-soft)}
+
+/* 常见问题 */
+.faq-list{display:grid;gap:12px}
+details.faq{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:16px 20px;
+  transition:.2s;
+}
+details.faq[open]{
+  border-color:#bcd9cf;
+  box-shadow:0 8px 20px rgba(31,111,92,.08);
+}
+details.faq summary{
+  cursor:pointer;
+  font-size:15.5px;
+  font-weight:600;
+  color:var(--main-dark);
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";
+  font-size:19px;
+  color:var(--accent);
+  font-weight:400;
+  flex-shrink:0;
+}
+details.faq[open] summary::after{content:"–"}
+details.faq p{
+  margin-top:12px;
+  font-size:14.5px;
+  color:var(--ink-soft);
+  border-top:1px dashed var(--line);
+  padding-top:12px;
+}
+
+/* 侧栏提示区 + 主内容双栏 */
+.two-col{
+  display:grid;
+  grid-template-columns:2.1fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+aside.side-card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 22px 18px;
+  position:sticky;
+  top:86px;
+}
+aside.side-card h3{
+  font-size:16.5px;
+  color:var(--main-dark);
+  margin-bottom:12px;
+  padding-bottom:10px;
+  border-bottom:1px dashed var(--line);
+}
+aside.side-card ul{list-style:none}
+aside.side-card li{
+  font-size:14px;
+  color:var(--ink-soft);
+  padding:8px 0 8px 18px;
+  position:relative;
+  line-height:1.6;
+}
+aside.side-card li::before{
+  content:"";
+  position:absolute;
+  left:2px;top:16px;
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--main);
+}
+.side-tip{
+  margin-top:14px;
+  background:var(--main-light);
+  border-radius:9px;
+  padding:12px 14px;
+  font-size:13px;
+  color:var(--main-dark);
+  line-height:1.65;
+}
+
+/* 页脚 */
+footer.site-footer{
+  background:#16241f;
+  color:#9fb5ad;
+  padding:44px 0 22px;
+  margin-top:20px;
+  font-size:14px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:28px;
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.footer-grid h4{
+  color:#e6f0ec;
+  font-size:15px;
+  margin-bottom:12px;
+}
+.footer-grid p{font-size:13.5px;line-height:1.75;color:#8ea79f}
+.footer-grid ul{list-style:none}
+.footer-grid li{margin-bottom:8px}
+.footer-grid a{font-size:13.5px;color:#9fb5ad;transition:.2s}
+.footer-grid a:hover{color:#ffd9a8}
+.footer-bottom{
+  padding-top:18px;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:13px;
+  color:#7d938c;
+}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .type-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .two-col{grid-template-columns:1fr}
+  aside.side-card{position:static}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .header-inner{flex-direction:column;align-items:flex-start;gap:12px}
+  nav.main-nav ul{gap:2px}
+  nav.main-nav a{padding:7px 10px;font-size:14px}
+  .hero{padding:40px 0 46px}
+  .hero h1{font-size:26px}
+  .area-layout{grid-template-columns:1fr}
+  .notice-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  section.block{padding:42px 0}
+  .section-head h2{font-size:22px}
+}
+@media (max-width:480px){
+  .type-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero h1{font-size:23px}
+  .quick-card{padding:20px 18px 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>鹰手营子矿区 · 本地租房信息参考</span>
+    <span>信息以实地核实为准 · 谨慎签约</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-logo">营</div>
+      <div class="brand-text">
+        <b>鹰手营子租房</b>
+        <small>YINGSHOUYINGZI RENT</small>
+      </div>
+    </div>
+    <nav class="main-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#types" class="active">房源类型</a></li>
+        <li><a href="#areas">区域分布</a></li>
+        <li><a href="#price">租金参考</a></li>
+        <li><a href="#process">看房流程</a></li>
+        <li><a href="#notice">注意事项</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>在鹰手营子租房，先弄清<em>房源类型与区域行情</em></h1>
+        <p class="lead">
+          鹰手营子矿区位于河北省承德市，城区规模不大，房源多集中在矿区街道、城镇建成区和周边乡镇。
+          这里没有大型连锁中介集中布局，租房更多依赖本地信息、熟人介绍和实地走访。先了解区域特点、房型差异和大致租金区间，再去现场看房，能少走很多弯路。
+        </p>
+        <div class="hero-tags">
+          <span>整租一居 / 两居</span>
+          <span>合租单间</span>
+          <span>自建房出租</span>
+          <span>临街商铺</span>
+          <span>短租过渡</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#types" class="btn btn-solid">查看房源类型</a>
+          <a href="#process" class="btn btn-ghost">了解看房流程</a>
+        </div>
+      </div>
+
+      <div class="quick-card">
+        <h2>租房前快速了解</h2>
+        <ul class="quick-list">
+          <li><b>城区范围</b><span>矿区街道、城镇建成区</span></li>
+          <li><b>常见户型</b><span>一居、两居、单间</span></li>
+          <li><b>主要渠道</b><span>本地信息、熟人介绍</span></li>
+          <li><b>付款方式</b><span>押一付三较为常见</span></li>
+          <li><b>看房重点</b><span>供暖、水电、通勤</span></li>
+        </ul>
+        <div class="quick-note">
+          提示：具体租金受楼层、装修、供暖方式和租期影响较大，本文仅提供判断思路，实际以现场协商为准。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 房源类型 -->
+  <section class="block" id="types">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">HOUSING TYPES</span>
+        <h2>鹰手营子常见的几类出租房源</h2>
+        <p>不同房型对应的居住体验、租金水平和适合人群差别明显。先确定自己的居住周期和预算，再选择房型，比盲目看房效率更高。</p>
+      </div>
+
+      <div class="type-grid">
+        <article class="type-card">
+          <div class="type-icon">整</div>
+          <h3>整租一居 / 两居</h3>
+          <p>多为城镇建成区内的老式住宅楼，面积适中，厨卫独立。适合长期居住、家庭同住或对私密性要求较高的租客。</p>
+          <div class="fit">适合：长期稳定居住</div>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">合</div>
+          <h3>合租单间</h3>
+          <p>以单间出租为主，厨卫公共使用，租金相对较低。适合预算有限、短期务工或刚到此地工作的人群。</p>
+          <div class="fit">适合：预算有限、短期过渡</div>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">民</div>
+          <h3>自建房出租</h3>
+          <p>矿区周边及乡镇自建房较多，部分带独立小院。空间相对宽松，但需重点确认取暖、上下水和用电条件。</p>
+          <div class="fit">适合：注重空间、可接受偏远</div>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">商</div>
+          <h3>临街商铺 / 门面</h3>
+          <p>沿街门面房，多用于小超市、餐饮、修理等经营用途。租期通常较长，需提前确认经营资质和水电容量。</p>
+          <div class="fit">适合：个体经营、开店</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 区域与租金 -->
+  <section class="block" id="areas" style="background:#eef5f2">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">AREA &amp; PRICE</span>
+        <h2>区域分布与租金影响因素</h2>
+        <p>鹰手营子城区面积不大，但不同位置的便利程度差别不小。把区域特点和租金构成一起看，更容易判断一套房是否值得租。</p>
+      </div>
+
+      <div class="area-layout">
+        <div class="area-panel">
+          <h3>区域特点参考</h3>
+          <p class="sub">以下为常见居住片区的类型化描述，具体以实地情况为准。</p>
+          <ul class="area-list">
+            <li>
+              <b>矿区街道及城镇建成区</b>
+              <span>生活配套相对集中，超市、菜市场、公交站点较近，适合不依赖自驾、希望步行解决日常采买的人。</span>
+            </li>
+            <li>
+              <b>主干道沿线</b>
+              <span>出行方便，临街房源可能有一定噪音，临路商铺与住宅混杂，需留意夜间环境和停车条件。</span>
+            </li>
+            <li>
+              <b>周边乡镇与村庄</b>
+              <span>空间更大、租金通常更低，但公交班次有限，采买和就医需要提前规划通勤方式。</span>
+            </li>
+            <li>
+              <b>学校、市场附近</b>
+              <span>人流集中，陪读或做小生意的人较多，房源流转较快，遇到合适的需要尽快确认。</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="area-panel">
+          <h3>影响租金的常见因素</h3>
+          <p class="sub">同样面积的房子，租金差异往往来自这几个方面。</p>
+          <ul class="factor-list">
+            <li><b>供暖方式：</b>集中供暖与自行取暖的成本差别明显，冬季费用需提前问清由谁承担。</li>
+            <li><b>楼层与朝向：</b>低层潮湿、高层无电梯，采光好坏都会直接影响居住感受和议价空间。</li>
+            <li><b>装修与家具：</b>是否带床、衣柜、热水器、洗衣机等，决定了入住后的额外添置成本。</li>
+            <li><b>水电性质：</b>民用水电和商用计费价格不同，商铺或部分自建房需特别确认。</li>
+            <li><b>租期长短：</b>租期越长，房东通常越愿意在价格上让步，短租则议价空间较小。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 看房流程 -->
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">VIEWING PROCESS</span>
+        <h2>从找房到入住的五个步骤</h2>
+        <p>本地租房流程并不复杂，但每一步都有容易忽略的细节。按顺序推进，能减少后续纠纷。</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <h3>明确需求</h3>
+          <p>先确定预算上限、居住人数、通勤距离和租期，避免被临时看到的房源打乱判断。</p>
+        </article>
+        <article class="step">
+          <h3>收集信息</h3>
+          <p>通过本地信息渠道、熟人介绍或实地走访了解在租房源，注意核对信息发布时间。</p>
+        </article>
+        <article class="step">
+          <h3>实地看房</h3>
+          <p>白天和晚上各看一次更好，重点检查水压、供暖、电路、门窗密封和周边环境。</p>
+        </article>
+        <article class="step">
+          <h3>协商条款</h3>
+          <p>确认租金、押金、付款周期、维修责任、能否转租以及提前退租的处理方式。</p>
+        </article>
+        <article class="step">
+          <h3>签约交接</h3>
+          <p>签订书面合同，核对房东身份与产权信息，记录水电表底数并清点室内物品。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 注意事项 + 侧栏 -->
+  <section class="block" id="notice" style="background:#eef5f2">
+    <div class="wrap two-col">
+      <div>
+        <div class="section-head">
+          <span class="eyebrow">KEY POINTS</span>
+          <h2>签约前务必确认的几件事</h2>
+          <p>租房纠纷多数源于口头约定不清。把关键内容写进合同，比事后争论更有效。</p>
+        </div>
+
+        <div class="notice-band">
+          <h3>容易忽略但很重要的细节</h3>
+          <div class="notice-grid">
+            <div class="notice-item">
+              <b>核实出租人身份</b>
+              <p>确认对方是房东本人还是转租人，查看身份证与房屋权属相关材料，避免遇到无权出租的情况。</p>
+            </div>
+            <div class="notice-item">
+              <b>写清费用承担</b>
+              <p>水、电、燃气、取暖、物业、卫生等费用由谁缴纳、如何分摊，应在合同中逐项写明。</p>
+            </div>
+            <div class="notice-item">
+              <b>保留付款凭证</b>
+              <p>租金和押金尽量通过可留痕的方式支付，索要收据或在合同中注明已付金额与日期。</p>
+            </div>
+            <div class="notice-item">
+              <b>检查房屋现状</b>
+              <p>墙面、家具、家电的既有损坏应提前拍照记录，避免退租时被认定为人为损坏。</p>
+            </div>
+            <div class="notice-item">
+              <b>明确维修责任</b>
+              <p>自然老化、管道堵塞、家电故障等由谁负责维修，建议在合同中约定处理方式。</p>
+            </div>
+            <div class="notice-item">
+              <b>约定退租条件</b>
+              <p>提前退租是否扣押金、能否转租、续租如何调价，最好提前沟通清楚并写入条款。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <h3>看房随身清单</h3>
+        <ul>
+          <li>手机或手电，检查角落与柜内</li>
+          <li>打开水龙头，观察水压与排水</li>
+          <li>测试插座、灯具和热水器</li>
+          <li>询问供暖方式与往年温度</li>
+          <li>查看门窗密封与隔音情况</li>
+          <li>了解垃圾清运和快递收取点</li>
+        </ul>
+        <div class="side-tip">
+          冬季看房尤其要关注供暖效果和室内保温，这两项直接影响居住成本和舒适度。
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 常见问题 -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">FAQ</span>
+        <h2>鹰手营子租房常见问题</h2>
+        <p>以下问题来自租房过程中较常见的疑问，回答以通用经验为主，具体情况请结合实地核实。</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq" open>
+          <summary>鹰手营子租房一般通过什么渠道找？</summary>
+          <p>本地房源信息相对分散，常见方式包括本地信息平台、社区公告、熟人介绍以及直接到目标片区走访询问。由于城区不大，实地走一圈往往比线上筛选更直接，但要注意核对信息是否仍在有效期内。</p>
+        </details>
+
+        <details class="faq">
+          <summary>租金大概是什么水平？</summary>
+          <p>租金受户型、楼层、装修、供暖方式和租期影响较大，不同片区之间也存在差异。建议先确定自己的预算区间，再对比同片区几套房源，通过横向比较判断价格是否合理，不宜直接套用其他城市的标准。</p>
+        </details>
+
+        <details class="faq">
+          <summary>押金一般怎么收、怎么退？</summary>
+          <p>常见做法是押一付三或押一付一，具体由双方协商。退租时押金应在结清水电等费用、房屋无人为损坏的情况下退还。建议在合同中写明押金金额、退还条件和退还时间，并保留好付款凭证。</p>
+        </details>
+
+        <details class="faq">
+          <summary>冬天取暖费用由谁承担？</summary>
+          <p>这取决于房屋的供暖方式和双方约定。集中供暖通常包含在物业或取暖费中，自行取暖则涉及燃料或电费。签约前应明确取暖费的金额、缴纳方式和承担方，并写入合同，避免入冬后产生争议。</p>
+        </details>
+
+        <details class="faq">
+          <summary>短租几个月可以吗？</summary>
+          <p>部分房东可以接受短租，但价格通常高于长租，且可选房源较少。如果有短租需求，建议提前说明租期，并在合同中约定续租或提前退租的处理方式，减少临时变动带来的损失。</p>
+        </details>
+
+        <details class="faq">
+          <summary>租房合同需要注意哪些条款？</summary>
+          <p>重点关注租赁期限、租金与押金、付款方式、费用承担、维修责任、提前退租和违约责任等内容。合同应写明房屋地址、双方身份信息和交接时的水电表底数，签字前逐条阅读，不清楚的地方当场问明白。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>鹰手营子租房</h4>
+        <p>面向在鹰手营子矿区找房的人群，整理房源类型、区域特点、租金影响因素与签约注意事项，帮助租客在本地更稳妥地完成租房决策。</p>
+      </div>
+      <div>
+        <h4>房源导航</h4>
+        <ul>
+          <li><a href="#types">整租与合租</a></li>
+          <li><a href="#types">自建房出租</a></li>
+          <li><a href="#types">临街商铺</a></li>
+          <li><a href="#areas">区域分布</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>租房指南</h4>
+        <ul>
+          <li><a href="#process">看房流程</a></li>
+          <li><a href="#notice">签约注意</a></li>
+          <li><a href="#price">租金因素</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>温馨提示</h4>
+        <ul>
+          <li>实地看房后再决定</li>
+          <li>签订书面租赁合同</li>
+          <li>保留付款凭证</li>
+          <li>核实出租人身份</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本站内容为租房信息参考与经验整理，不构成任何交易担保。</span>
+      <span>鹰手营子租房 · 本地居住参考</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links = document.querySelectorAll('nav.main-nav a');
+  var sections = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href');
+    if(id && id.charAt(0) === '#'){
+      var el = document.querySelector(id);
+      if(el){ sections.push({link:a, el:el}); }
+    }
+  });
+  if(!sections.length) return;
+
+  function update(){
+    var pos = window.scrollY + 140;
+    var current = sections[0];
+    sections.forEach(function(item){
+      if(item.el.offsetTop <= pos){ current = item; }
+    });
+    links.forEach(function(a){ a.classList.remove('active'); });
+    if(current && current.link){ current.link.classList.add('active'); }
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      window.requestAnimationFrame(function(){
+        update();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  update();
+})();
+</script>
+
+</body>
+                      </html>
